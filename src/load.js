@@ -1,4 +1,5 @@
 import { createElement, createUl, createImageDiv, createMenuItem, clearChildren} from "./utils.js";
+import favIco from './assets/favicon.ico';
 import imgLogo from './assets/ratatouille.png';
 import imgBg1 from './assets/paris_restaurant.jpeg';
 import imgBg2 from './assets/critique.jpeg';
@@ -7,6 +8,11 @@ import imgAddress from './assets/address.jpeg';
 function loadContent() {
 
     const content = document.getElementById('content');
+    const link = document.createElement('link');
+
+    link.rel = 'icon';
+    link.href = favIco;
+    document.head.appendChild(link);
 
     const createHeader = (() => {
         const header = createElement({type: 'div', className: 'header'});
