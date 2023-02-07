@@ -1,0 +1,246 @@
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('./assets/EBGaramond-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Sacramento';
+    src: url('./assets/Sacramento-Regular.ttf');
+}
+
+
+@font-face {
+    font-family: 'Parisienne';
+    src: url('./assets/Parisienne-Regular.ttf');
+} 
+
+body {
+    background: black;
+    color: rgba(255, 255, 255, 0.839);
+    font-family: 'EB Garamond', cursive;
+    animation: fadeIn 1.5s;
+}
+
+.header {
+    font-family: 'Parisienne', sans-serif ;
+    font-size: clamp(3%, 5vw, 40px);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 clamp(5%, 10%, 60px);
+    gap: 1%;
+    
+}
+
+.main {
+    width: 100%;
+    position: relative;
+}
+
+#image-logo{
+    width: clamp(10%, 8vw, 100px);
+    margin-right: min(2%, 10px);
+}
+
+#image-logo > img {
+    width: clamp(10%, 8vw, 100px);
+    height: auto;
+}
+
+.image-restaurant {
+    display: flex;
+    animation: fadeIn 1.5s;
+}
+
+.main, .image-restaurant > img {
+    width: clamp(0px, 70vw, 800px);
+    margin: auto;
+    height: auto;
+    border-radius: min(10px, 3%);
+}
+
+
+/* Navigation bar */
+
+.nav {
+    display: flex;
+    width: clamp(0px, 70vw, 800px);
+    justify-content: center;
+    margin: auto;
+    height: min(50px, 6vw);
+    font-family: 'Sacramento', sans-serif;
+}
+
+.nav > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 600px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav > ul > li{
+    list-style-type: none;
+    border-radius: 3px;
+    font-size: clamp(5px, 4vw, 35px);
+    height: 100%;
+    width: 33%;
+    padding: 0 min(5%, 10px);
+    display: grid;
+    place-content: center;
+}
+
+.nav > ul > li:hover{
+    background-color: rgba(247, 247, 247, 0.146);
+    text-decoration: overline;
+    text-decoration-color: #d3d5d3b0;
+    cursor: pointer;
+}
+/* container */
+.container-content {
+    margin: 0;
+}
+
+#container {
+    background-color: rgba(255, 255, 255, 0.775);
+    border-radius: min(10px, 3%);
+    width: clamp(0px, calc(70vw - 20%), calc(800px - 20%));
+    z-index: 2;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    color: black;
+    font-size: min(3vw, 30px);
+    padding: min(3vw, 10%) min(10vw, 15%);
+    box-sizing: border-box;
+    opacity: 1;
+    height: clamp(0px, 70vw, 700px);
+}
+
+#container ul {
+    padding: 0;
+}
+
+.home, .menu, .contact{
+    animation: fadeIn 1.5s;
+}
+/* hours */
+#hours {
+    display: grid;
+    place-content: center;
+
+}
+
+#hours > p {
+    text-align: center;
+    margin-left: min(70px, 2.5vw);
+    margin: 0;
+    text-decoration: underline;
+    text-decoration-color:rgba(68, 68, 68, 0.447);
+}
+
+#hours li {
+    display: flex;
+    justify-content: space-between;
+}
+.day {
+    font-weight: bold;
+    color:rgba(68, 68, 68, 0.856)
+}
+
+.hours {
+    margin-left: min(60px, 2vw)
+}
+
+.ardoise {
+    position: absolute;
+    z-index: 3;
+    top: calc(5% - 5px);
+    left: calc(50% - 15vw/2);
+    height: min(15px, 5%);
+    background-color: rgba(0, 0, 0, 0.809);
+    width: 15vw;
+    box-shadow: 5px 4px 6px gray;
+}
+
+.description{
+    text-align: center;
+}
+
+/* Menu */
+.menu {
+    font-family: 'Sacramento', sans-serif;
+    font-size: min(6vw, 60px);
+    margin: auto;
+    text-align: center;
+}
+
+.menu p {
+    margin: 0;
+    text-align: center;
+}
+
+.dish p.title {
+    font-size: min(5vw, 50px);
+    text-decoration: underline;
+    text-decoration-color:rgba(167, 167, 167, 0.518);
+}
+
+.dish p.menu-item {
+    font-size: min(3vw, 25px);
+    font-family: 'EB Garamond', sans-serif;
+}
+
+.dish {
+    margin-top: min(50px, 10%);
+}
+
+/* Contact */
+
+p.reservations {
+    font-family: 'Sacramento', sans-serif;
+    text-align: center;
+    font-size: min(5vw, 50px);
+    margin: min(20px, 2vw) 0;
+}
+
+address {
+    text-align: center;
+}
+
+.image-address{
+    margin-top: min(30px, 10%);
+}
+.image-address > img {
+    width: 100%;
+    height: auto;
+}
+
+#ardoise:not(.activate), #container:not(.activate) {
+    opacity: 0;
+    transform: scaleY(0);
+
+}
+
+#ardoise.activate,  #container.activate  {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+#ardoise, #container {
+    transition: transform 0.8s;
+}
+
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
