@@ -23,7 +23,7 @@ body {
 
 .header {
     font-family: 'Parisienne', sans-serif ;
-    font-size: clamp(3%, 5vw, 40px);
+    font-size: clamp(3%, 6vw, 45px);
     color: white;
     display: flex;
     justify-content: center;
@@ -54,7 +54,7 @@ body {
 }
 
 .main, .image-restaurant > img {
-    width: clamp(0px, 90vw, 800px);
+    width: clamp(0px, 95vw, 900px);
     margin: auto;
     height: auto;
     border-radius: min(10px, 3%);
@@ -65,7 +65,7 @@ body {
 
 .nav {
     display: flex;
-    width: clamp(0px, 90vw, 800px);
+    width: clamp(0px, 95vw, 900px);
     justify-content: center;
     margin: auto;
     height: min(50px, 6vw);
@@ -85,7 +85,7 @@ body {
 .nav > ul > li{
     list-style-type: none;
     border-radius: 3px;
-    font-size: clamp(5px, 4vw, 35px);
+    font-size: clamp(8px, 5vw, 40px);
     height: 100%;
     width: 33%;
     padding: 0 min(5%, 10px);
@@ -107,7 +107,7 @@ body {
 #container {
     background-color: rgba(255, 255, 255, 0.775);
     border-radius: min(10px, 3%);
-    width: clamp(0px, calc(90vw - 20%), calc(800px - 20%));
+    width: clamp(0px, calc(95vw - 20%), calc(900px - 20%));
     z-index: 2;
     position: absolute;
     top: 5%;
@@ -117,7 +117,7 @@ body {
     padding: min(3vw, 10%) min(10vw, 15%);
     box-sizing: border-box;
     opacity: 1;
-    height: clamp(0px, 90vw, 700px);
+    height: clamp(0px, 95vw, 900px);
 }
 
 #container ul {
@@ -131,7 +131,10 @@ body {
 #hours {
     display: grid;
     place-content: center;
+}
 
+#hours ul {
+    padding-inline-start: 0;
 }
 
 #hours > p {
@@ -167,7 +170,7 @@ body {
 }
 
 .description{
-    text-align: center;
+    text-align: justify;
 }
 
 /* Menu */
@@ -209,6 +212,7 @@ p.reservations {
 
 address {
     text-align: center;
+    font-style: normal;
 }
 
 .image-address{

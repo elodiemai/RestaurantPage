@@ -1,9 +1,55 @@
-import { createElement, createUl, createImageDiv, createMenuItem, clearChildren} from "./utils.js";
+import { createElement, createUl, createImageDiv, createMenuItem, clearChildren, getMenuItem} from "./utils.js";
 import favIco from './assets/favicon.ico';
 import imgLogo from './assets/ratatouille.png';
 import imgBg1 from './assets/paris_restaurant.jpeg';
 import imgBg2 from './assets/critique.jpeg';
 import imgAddress from './assets/address.jpeg';
+
+const menuWeek = [
+    {
+        day: 0,
+        appetizers: ['Potato Chips'],
+        mains: ['Osso Bucco', 'Spaghetti Carbonara'],
+        desserts: ['Crème brûlée', 'Macarons']
+    },
+    {
+        day: 1,
+        appetizers: ['Avocado Toasts'],
+        mains: ['Ratatouille'],
+        desserts: ['Key Lime Pie']
+    },
+    {
+        day: 2,
+        appetizers: ['Butternut Squash Soup'],
+        mains: ['Goat Quiche'],
+        desserts: ['Chocolate Brownie','Vanilla Ice Cream']
+    },
+    {
+        day: 3,
+        appetizers: ['Roasted Zuccini'],
+        mains: ['Banh Cuon', 'Papaya Salad'],
+        desserts: ['Mango Panna Cotta','London Shortbread']
+    },
+    {
+        day: 4,
+        appetizers: ['Breakfast Burrito'],
+        mains: ['Tartiflette'],
+        desserts: ['Pineapple Cake','Hazelnut Ice Cream']
+    },
+    {
+        day: 5,
+        appetizers: ['Vegan Eggrolls'],
+        mains: ['Beef Lasagna','Roquette & Goat Salad'],
+        desserts: ['English Banoffee','Tiramisu']
+    },
+    {
+        day: 6,
+        appetizers: ['Croque-Madame'],
+        mains: ['Salmon Pokebowl'],
+        desserts: ['New York Cheesecake','Strawberry Jam']
+    }
+]
+    
 
 function loadContent() {
 
@@ -46,7 +92,7 @@ function loadContent() {
         switch(type) {
             case 'home':
                 const home = createElement({type: 'div',className: 'home'});
-                const pDescription = createElement({type:'p',className:'description',innerText:'Brought to you by the world reknown chef from the Disney movie \'Ratatouille\''});
+                const pDescription = createElement({type:'p',className:'description',innerText:'Brought to you by the world reknown Chef from the Disney movie \'Ratatouille\.'});
                 home.append(pDescription);
                 const hours = createElement({type: 'div', idName: "hours"});
                 const pHours = createElement({type: 'p', innerText:'Hours:'});
@@ -58,18 +104,19 @@ function loadContent() {
                     ['<span class="day">Friday:</span><span class="hours">8pm -11pm</span>',''],
                     ['<span class="day">Saturday:</span><span class="hours">8pm -11pm</span>',''],
                 );
+                const pFooter = createElement({type:'p',className:'description',innerText:'Located at the heart of the city, Le Festin Restaurant is pleased to serve you with the most exquisite meals straight from the creative mind of its Chef.'});
                 hours.append(pHours, ul);
-                home.append(hours);   
+                home.append(hours, pFooter);   
                 divContent.append(home);
             break;
             case 'menu':
                 const menu = createElement({type: 'div',className: 'menu',innerText: 'Menu'});
                  /* Appetizers */
-                const appetizers = createMenuItem('Appetizers',['Potato Chips']);
+                const appetizers = createMenuItem('Appetizers', getMenuItem(menuWeek, 'appetizers'));
                 /* Mains */
-                const mains = createMenuItem('Mains',['Osso Bucco', 'Spaghetti Carbonara']);
+                const mains = createMenuItem('Mains', getMenuItem(menuWeek, 'mains'));
                 /* Desserts */
-                const desserts = createMenuItem('Desserts',['Crème brûlée', 'Macarons']);
+                const desserts = createMenuItem('Desserts', getMenuItem(menuWeek, 'desserts'));
                 menu.append(appetizers, mains, desserts);
                 divContent.append(menu);
             break;
