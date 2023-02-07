@@ -54,7 +54,7 @@ body {
 }
 
 .main, .image-restaurant > img {
-    width: clamp(0px, 80vw, 800px);
+    width: clamp(0px, 90vw, 800px);
     margin: auto;
     height: auto;
     border-radius: min(10px, 3%);
@@ -65,7 +65,7 @@ body {
 
 .nav {
     display: flex;
-    width: clamp(0px, 70vw, 800px);
+    width: clamp(0px, 90vw, 800px);
     justify-content: center;
     margin: auto;
     height: min(50px, 6vw);
@@ -107,7 +107,7 @@ body {
 #container {
     background-color: rgba(255, 255, 255, 0.775);
     border-radius: min(10px, 3%);
-    width: clamp(0px, calc(70vw - 20%), calc(800px - 20%));
+    width: clamp(0px, calc(90vw - 20%), calc(800px - 20%));
     z-index: 2;
     position: absolute;
     top: 5%;
@@ -117,7 +117,7 @@ body {
     padding: min(3vw, 10%) min(10vw, 15%);
     box-sizing: border-box;
     opacity: 1;
-    height: clamp(0px, 70vw, 700px);
+    height: clamp(0px, 90vw, 700px);
 }
 
 #container ul {
