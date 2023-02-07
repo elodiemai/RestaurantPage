@@ -54,7 +54,7 @@ body {
 }
 
 .main, .image-restaurant > img {
-    width: clamp(0px, 70vw, 800px);
+    width: clamp(0px, 80vw, 800px);
     margin: auto;
     height: auto;
     border-radius: min(10px, 3%);
